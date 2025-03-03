@@ -1,0 +1,21 @@
+{
+    "key" : ["idstaging","fkflow","competence","daccount","nsupplier","estatus","dins","dlastupd"],
+    "events" : [
+        {
+            "event" : 0,
+            "routes": ["cclassmin", "etypepaym"]
+        },
+        {
+            "event" : 1,
+            "routes": ["cclassmin", "brev"]
+        },
+        {
+            "event" : 2,
+            "routes": ["cclassmin", "brev", "bcommission"]
+        },
+        {
+            "event" : 3,
+            "routes": ["etyperes", "isres"]
+        }
+    ]
+}
