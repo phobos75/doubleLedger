@@ -21,7 +21,7 @@
   color: white;
   width: 6.5em;
   height: 2.4em;
-  border-radius: .4em;
+  border-radius: .5em;
   border-color: black;
   border-width: .1em;
   box-shadow: 2px 3px #666;
@@ -43,6 +43,11 @@
   font-weight: bold;
   color:white;
 }
+.row:hover {
+  background-color: #fd0;
+  font-weight: bold;
+}
+
 </style>
 
 
@@ -63,6 +68,3 @@
     <div class="btn-group">
       <button type="button" class="ttn" name="home" onclick="location.href='/home'">Home</button>
       <button type="button" class="ttn ms-2" name="loader" onclick="location.href='/coa'">CoA</button>
-    </div>
-  </div>
-</div>

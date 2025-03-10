@@ -1,3 +1,12 @@
+from itertools import count
+import json
+
+
+cst = '''[
+    {"nome":"darno","cognome":"peru"},{"nome":"paolo","cognome":"appo"}]'''
+
+
+cstr = '''
 [
     {
         "event" : "0",
@@ -145,7 +154,6 @@
     {
         "event"         : "3",
         "cause"         : "0",
-        "codLedger"     : "r0",
         "isres"         : "1",
         "etyperes"      : "0",
         "accounts"      : [
@@ -158,7 +166,6 @@
     {
         "event"         : "3",
         "cause"         : "1",
-        "codLedger"     : "r0",
         "isres"         : "1",
         "etyperes"      : "1",
         "accounts"      : [
@@ -171,7 +178,6 @@
     {
         "event"         : "3",
         "cause"         : "2",
-        "codLedger"     :"r0",
         "isres"         : "1",
         "etyperes"      : "2",
         "accounts"      : [
@@ -182,3 +188,13 @@
         ]
     }
 ]
+'''
+
+coa = json.loads(cstr)
+print()
+for i in range( len(coa)) :
+    for j in range( len(coa[i]['accounts'] )) :
+        print( coa[i]['event'], coa[i]['cause'], coa[i]['accounts'][j]['debit']['descr'], coa[i]['accounts'][j]['debit']['iban'] )
+        if 'credit' in coa[i]['accounts'][j] :
+            print( coa[i]['event'], coa[i]['cause'], coa[i]['accounts'][j]['credit']['descr'], coa[i]['accounts'][j]['credit']['iban'] )
+
