@@ -12,5 +12,4 @@ bla bla bla
 Bla Bla Bla
 <br>
 
-
 % include('footer.tpl')

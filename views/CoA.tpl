@@ -11,8 +11,10 @@
 <div class="container-fluid">
 -->
 
+%if not value :
+
 <!-- CoA header -->
-<div class="row mt-2">
+<div class="row mt-2" id="coaHeader">
   <div class="col-1 border"><b>event</b></div>
   <div class="col-1 border"><b>cause</b></div>
   <div class="col-1 border"><b>codLedger</b></div>
@@ -20,10 +22,11 @@
   <div class="col-2 border"><b>iban</b></div>
 </div>
 
+
 <!-- body -->
 %for i in range( len( coa )) :
 %for j in range( len( coa[i]['accounts'] )) :
-<div class="row">
+<div class="row" id="coa_{{i}}">
   <div class="col-1 border">{{ coa[i]['event'] }}</div>
   <div class="col-1 border">{{ coa[i]['cause'] }}</div>
   <div class="col-1 border">{{ coa[i]['codLedger'] }}</div>
@@ -42,5 +45,10 @@
 </div>
 %end
 %end
+%else :
+<div style="border:1px solid red; margin-top:10px">{{ value }}</div>
+%end
+
+
 
 % include('footer.tpl')

@@ -7,7 +7,8 @@ def send_static(filename) :
 
 @route('/img/<filename>')
 def send_static(filename) :
-    return static_file(filename, root='./img/')
+    return static_file(filename, root='C:/tmp/projects/doubleLedger/img/')
+    #return static_file(filename, root='./img/')
 
 @route('/')
 @route('/home')
@@ -21,11 +22,16 @@ def coa(pName = 'CoA') -> dict :
     file = open('./cfg/coaConfig.json', 'rt')
     coaconfig = jj.load(file)
     file.close()
-    return dict(pName = pName, coa = coaconfig)
+    return dict(pName = pName, coa = coaconfig, value = None)
+
+@route('/coa/<value>')
+@view('coa')
+def coa_do(pName = 'CoA', value = '') -> dict :
+    return dict(pName = pName, value = value)
 
 if __name__ == '__main__' :
-    #run(host='localhost', port=8080)
     run(host='localhost', port=8080, debug=True, reloader=True)
+    #run(host='localhost', port=8080)
 
 ################
 #dp  ()_()     #
