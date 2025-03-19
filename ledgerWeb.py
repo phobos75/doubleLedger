@@ -1,5 +1,7 @@
 from bottle import route, run, template, view, get, post, request, static_file, redirect, response
 import json as jj
+import pymongo as pym
+
 
 @route('/js/<filename>')
 def send_static(filename) :
@@ -22,7 +24,7 @@ def coa(pName = 'CoA') -> dict :
     coaconfig = jj.load(file)
     file.close()
     return dict(pName = pName, coa = coaconfig, value = None)
-+1
+
 @route('/coa/<value>')
 @view('coa')
 def coa_do(pName = 'CoA', value = '') -> dict :
