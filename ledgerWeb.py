@@ -22,7 +22,7 @@ def coa(pName = 'CoA') -> dict :
     coaconfig = jj.load(file)
     file.close()
     return dict(pName = pName, coa = coaconfig, value = None)
-
++1
 @route('/coa/<value>')
 @view('coa')
 def coa_do(pName = 'CoA', value = '') -> dict :

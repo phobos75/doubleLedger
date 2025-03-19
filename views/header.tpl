@@ -43,7 +43,8 @@
 }
 .ttn:disabled {
   background-color: #666;
-  box-shadow: none;
+  box-shadow: 2px 3px black;
+  /*box-shadow: none;*/
 }
 .ttn:disabled:hover {
   font-weight: normal;

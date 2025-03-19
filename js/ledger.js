@@ -17,29 +17,27 @@ function isNumeric() {
 
     var vEvent = $( "#event" ).val();
     var vCause = $( "#cause" ).val();
+    var isDisabled = true;
 
     if ( vEvent != "" && !rgx.test(vEvent) ) {
         $( "#sp" ).text("event");
         $( "#alert" ).attr("hidden", false);
+        isDisabled = true;
     }
     else if ( vCause != "" && !rgx.test(vCause) ) {
         $( "#sp" ).text("cause");
         $( "#alert" ).attr("hidden", false);
+        isDisabled = true;
     }
     else {
         $( "#alert" ).attr("hidden", true);
-        $( "#findSubmit" ).attr("disabled", false);
+        isDisabled = false;
     }
-/*
-    if ( ! rgx.test(ob.value) ) {
-        $( "#alert" ).attr("hidden", false);
-        $( "#sp" ).text(ob.name);
-        //document.getElementById("alert").hidden = false;
+
+    if ( vEvent == "" || vCause == "" ) {
+        isDisabled = true;
     }
-    else {
-        $( "#alert" ).attr("hidden", true);
-        //document.getElementById("alert").hidden = true;
-    }
-    return;
-*/
+
+    $( "#findSubmit" ).attr("disabled", isDisabled);
+
 }
