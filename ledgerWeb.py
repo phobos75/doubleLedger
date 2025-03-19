@@ -3,12 +3,11 @@ import json as jj
 
 @route('/js/<filename>')
 def send_static(filename) :
-    return static_file(filename, root='./js/')
+    return static_file(filename, root='C:/tmp/projects/doubleLedger/js/')
 
 @route('/img/<filename>')
 def send_static(filename) :
     return static_file(filename, root='C:/tmp/projects/doubleLedger/img/')
-    #return static_file(filename, root='./img/')
 
 @route('/')
 @route('/home')
@@ -27,6 +26,8 @@ def coa(pName = 'CoA') -> dict :
 @route('/coa/<value>')
 @view('coa')
 def coa_do(pName = 'CoA', value = '') -> dict :
+    if value :
+        pName = pName + '/' + value
     return dict(pName = pName, value = value)
 
 if __name__ == '__main__' :

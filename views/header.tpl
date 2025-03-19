@@ -16,7 +16,7 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 -->
-<script src="js/ledger.js"></script>
+<script src="/js/ledger.js"></script>
 
 <style>
 .ttn {
@@ -41,6 +41,16 @@
   font-weight: bold;
   box-shadow: -2px -2px #666;
 }
+.ttn:disabled {
+  background-color: #666;
+  box-shadow: none;
+}
+.ttn:disabled:hover {
+  font-weight: normal;
+}
+.ttn:disabled:active {
+  color:white;
+}
 .dropdown-item {
   background-color: #def;
 }
@@ -49,11 +59,6 @@
   background-color: #d00;
   font-weight: bold;
   color:white;
-}
-.row:hover {
-  /*background-color: #fd0;*/
-  background-color: #def;
-  font-weight: bold;
 }
 
 </style>
