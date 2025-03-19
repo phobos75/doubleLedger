@@ -64,7 +64,7 @@ def main() -> None :
 
     out.write('[')
     out.write( jj.dumps( vars( output[0] )))
-    for idx in range(1, len(output))  :
+    for idx in range(1, len(output)) :
         out.write(',\n')
         out.write( jj.dumps( vars( output[idx] )))
     out.write(']')
@@ -72,10 +72,10 @@ def main() -> None :
     o.write("]")
     o.close()
     f.close()
+    out.close()
 
 if __name__ == "__main__" :
     main()
-
 
 ################
 #dp  ()_()     #
