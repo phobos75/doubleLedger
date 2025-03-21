@@ -30,12 +30,6 @@ def home(pName ='Home') -> dict :
 def coa(pName = 'CoA') -> dict :
     db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
     coaconfig = db['coaConfig'].find()
-    #for x in coaconfig : 
-    #    for y in x["accounts"] :
-    #        print()
-    #        print( y['debit'] )
-    #        if 'credit' in y :
-    #            print( y['credit'] )
     return dict(pName = pName, coa = coaconfig, value = None)
 
 @route('/coa/<value>')

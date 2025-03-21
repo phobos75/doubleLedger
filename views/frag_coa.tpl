@@ -6,8 +6,6 @@
 }
 </style>
 
-
-
 <!-- CoA header -->
 <div class="row mt-2" id="coaHeader">
   <div class="col-1 border"><b>event</b></div>
