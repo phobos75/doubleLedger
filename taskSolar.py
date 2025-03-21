@@ -5,7 +5,7 @@ import pymongo as pym
 
 def main() -> None :
     db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
-    clt = db['cfgAccounts']
+    clt = db['coaConfig']
 
     f = open('./input/staginglit.csv', 'r')
     o = open('./output/staging.json', 'wt')

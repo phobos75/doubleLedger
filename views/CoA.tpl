@@ -12,7 +12,8 @@
 -->
 
 %if not value :
-  %include('frag_coa.tpl')
+  <!-- %include('frag_coa.tpl') -->
+  %include('frag_cocoa.tpl')
 
 %elif "find" == value :
   %include('frag_coa_find.tpl')

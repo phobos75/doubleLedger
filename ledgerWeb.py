@@ -17,12 +17,25 @@ def send_static(filename) :
 def home(pName ='Home') -> dict :
     return dict(pName = pName)
 
+#@route('/coa')
+#@view('coa')
+#def coa(pName = 'CoA') -> dict :
+#    file = open('./cfg/coaConfig.json', 'rt')
+#    coaconfig = jj.load(file)
+#    file.close()
+#    return dict(pName = pName, coa = coaconfig, value = None)
+
 @route('/coa')
 @view('coa')
 def coa(pName = 'CoA') -> dict :
-    file = open('./cfg/coaConfig.json', 'rt')
-    coaconfig = jj.load(file)
-    file.close()
+    db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
+    coaconfig = db['coaConfig'].find()
+    #for x in coaconfig : 
+    #    for y in x["accounts"] :
+    #        print()
+    #        print( y['debit'] )
+    #        if 'credit' in y :
+    #            print( y['credit'] )
     return dict(pName = pName, coa = coaconfig, value = None)
 
 @route('/coa/<value>')
