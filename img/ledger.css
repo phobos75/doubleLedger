@@ -1,0 +1,42 @@
+.ttn {
+    background-color: #a03;
+    color: white;
+    width: 6.5em;
+    height: 2.4em;
+    border-radius: .5em;
+    border-color: black;
+    border-width: .1em;
+    box-shadow: 2px 3px #666;
+    margin-left: .2em;
+    margin-bottom: .1em;
+  }
+  .ttn:hover {
+    background-color: #f00;
+    font-weight: bold;
+  }
+  .ttn:active {
+    background-color: #f00;
+    color:#000;
+    font-weight: bold;
+    box-shadow: -2px -2px #666;
+  }
+  .ttn:disabled {
+    background-color: #666;
+    box-shadow: 2px 3px black;
+    /*box-shadow: none;*/
+  }
+  .ttn:disabled:hover {
+    font-weight: normal;
+  }
+  .ttn:disabled:active {
+    color:white;
+  }
+  .dropdown-item {
+    background-color: #def;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #d00;
+    font-weight: bold;
+    color:white;
+  }
