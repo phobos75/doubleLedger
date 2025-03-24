@@ -1,6 +1,6 @@
 
 
-<form method="get" action="/coa/result">
+<form method="GET" action="/coa/result">
   <div class="row mt-2">
     <div class="col-2">
       <label class="form-label" for="event"><b>event</b></label>
@@ -14,10 +14,10 @@
   </div>
   <div class="row mt-2">
     <div class="col-2 pt-1">
-      <input class="form-control" id="event" name="event" type="text" onblur="isNumeric()" />
+      <input class="form-control" id="event" name="event" type="text" onblur="checkNumeric()" />
     </div>
     <div class="col-2 pt-1">
-      <input class="form-control" id="cause" name="cause" type="text" onblur="isNumeric()" />
+      <input class="form-control" id="cause" name="cause" type="text" onblur="checkNumeric()" />
     </div>
     <div class="col-2 pt-1">
       <input class="form-control" id="codLedger" name="codLedger" type="text" />

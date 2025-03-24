@@ -40,3 +40,9 @@
     font-weight: bold;
     color:white;
   }
+
+  .coalist:hover {
+    /*background-color: #fd0;*/
+    background-color: #def;
+    font-weight: bold;
+  }

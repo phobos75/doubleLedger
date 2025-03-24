@@ -39,6 +39,16 @@ def coa_do(pName = 'CoA', value = '') -> dict :
         pName = pName + '/' + value
     return dict(pName = pName, value = value)
 
+@route('/coa/result')
+@view('coa')
+def coa_do(pName = 'CoA', value = 'result') -> dict :
+    dict_coa = request.query.decode()
+    db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
+    coaFound = db.coaConfig.find(dict_coa)
+    #count = db['coaConfig'].count_documents()
+    #print( count )
+    return dict(pName = 'coa/result', coa = coaFound, value = value)
+
 if __name__ == '__main__' :
     run(host='localhost', port=8080, debug=True, reloader=True)
     #run(host='localhost', port=8080)

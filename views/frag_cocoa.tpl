@@ -1,12 +1,3 @@
-
-<style>
-.coalist:hover {
-  /*background-color: #fd0;*/
-  background-color: #def;
-  font-weight: bold;
-}
-</style>
-
 <div class="row mt-1">
   <div class="col-3 border"><b>id</b></div>
   <div class="col-1 border"><b>event</b></div>

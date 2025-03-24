@@ -11,7 +11,7 @@ window.onload = function() {
     }
 }//*/
 
-function isNumeric() {
+function checkNumeric() {
 
     var rgx = /\d+/; //'[0-9]+';
 
