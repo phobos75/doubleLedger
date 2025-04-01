@@ -51,7 +51,6 @@ def coa_do(pName = 'CoA', value = 'result') -> dict :
 @view('coa')
 def coa_modify(pName = 'CoA', value = '') -> dict :
     db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
-    #coaFound = db['coaConfig'].find_one({"_id": ObjectId(value)})
     coaFound = db.coaConfig.find_one({"_id": ObjectId(value)})
     return dict(pName = 'coa/modify', coa = coaFound, value = 'modify')
 

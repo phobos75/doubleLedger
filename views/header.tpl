@@ -33,6 +33,5 @@
         <div class="dropdown-menu">
           <a class="dropdown-item" href="/coa/find">Find</a>
           <a class="dropdown-item" href="/coa/new">New account</a>
-          <a class="dropdown-item" href="/coa/modify">Modify</a>
           <a class="dropdown-item" href="/coa">View all</a>
         </div>
