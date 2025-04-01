@@ -1,3 +1,4 @@
+
 <div class="row mt-1">
   <div class="col-3 border"><b>id</b></div>
   <div class="col-1 border"><b>event</b></div>
@@ -7,7 +8,7 @@
   <div class="col-2 border"><b>IBAN</b></div>
 </div>
 %for x in coa :
-<div class="row mt-1 coalist">
+<div class="row mt-1 coalist" id="{{ x['_id'] }}">
   <div class="col-3 border">{{ x['_id'] }}</div>
   <div class="col-1 border">{{ x['event'] }}</div>
   <div class="col-1 border">{{ x['cause'] }}</div>

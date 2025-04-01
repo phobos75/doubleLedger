@@ -1,5 +1,5 @@
 from bottle import route, run, template, view, get, post, request, static_file, redirect, response
-import json as jj
+from bson import ObjectId
 import pymongo as pym
 
 
@@ -45,9 +45,15 @@ def coa_do(pName = 'CoA', value = 'result') -> dict :
     dict_coa = request.query.decode()
     db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
     coaFound = db.coaConfig.find(dict_coa)
-    #count = db['coaConfig'].count_documents()
-    #print( count )
     return dict(pName = 'coa/result', coa = coaFound, value = value)
+
+@route('/coa/modify/<value>')
+@view('coa')
+def coa_modify(pName = 'CoA', value = '') -> dict :
+    db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
+    #coaFound = db['coaConfig'].find_one({"_id": ObjectId(value)})
+    coaFound = db.coaConfig.find_one({"_id": ObjectId(value)})
+    return dict(pName = 'coa/modify', coa = coaFound, value = 'modify')
 
 if __name__ == '__main__' :
     run(host='localhost', port=8080, debug=True, reloader=True)

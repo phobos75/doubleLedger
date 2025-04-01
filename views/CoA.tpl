@@ -13,7 +13,8 @@
 
 %if not value :
   <!-- %include('frag_coa.tpl') -->
-  %include('frag_cocoa.tpl')
+  %include('frag_coa_result.tpl')
+  <!-- %include('frag_cocoa.tpl') -->
 
 %elif "find" == value :
   %include('frag_coa_find.tpl')
@@ -26,6 +27,9 @@
 
 %elif "result" == value :
   %include('frag_coa_result.tpl')
+
+%elif "modify" == value :
+  %include('frag_coa_modify.tpl')
 
 %else :
   %include('not_allowed.tpl')
