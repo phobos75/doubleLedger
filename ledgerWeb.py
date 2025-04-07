@@ -57,12 +57,6 @@ def coa_modify(pName = 'CoA', value = '') -> dict :
 @post('/coa/modisave')
 @view('coa')
 def coa_modisave(pName="CoA", value='') -> dict :
-    print(dict(request.forms))
-    print(request.forms.frm_id)
-    print(request.forms.frm_event)
-    print(request.forms.frm_cause)
-    print(request.forms.frm_codLedger)
-    print(request.forms.frm_)
     db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
     coaFound = db.coaConfig.find_one({"_id": ObjectId(request.forms.frm_id)})
     coaNew = {"$set":dict(request.forms)}
