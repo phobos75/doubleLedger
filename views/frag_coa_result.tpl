@@ -1,4 +1,5 @@
 
+
 <div class="row mt-2">
   <div class="col-3 border"><b>id</b></div>
   <div class="col-1 border"><b>event</b></div>
@@ -7,6 +8,8 @@
   <div class="col-4 border"><b>account description</b></div>
   <div class="col-2 border"><b>IBAN</b></div>
 </div>
+
+
 %for x in coa :
 <!-- <div class="row mt-1 coalist" onclick="location.href='/home'"> -->
 <div class="row mt-3 coalist" onclick="coaList_switch_visibility(this)">
@@ -74,7 +77,9 @@
         {{ x['etyperes'] }}
       %end
     </div>
-    <div class="col-2"><button class="ttn" type="submit" onclick="$(location).attr('href', '/coa/modify/' + get_id(this))">modify</button></div>
+    <div class="col-1"><button class="ttn" type="submit" onclick="$(location).attr('href', '/coa/modify/' + get_id(this))">modify</button></div>
+    <div class="col-1"><button class="ttn" type="submit" onclick="$(location).attr('href', '/coa/clone/' + get_id(this))">clone</button></div>
+    <div class="col-1"><button class="ttn" type="submit" onclick="$(location).attr('href', '/coa/delete/' + get_id(this))">delete</button></div>
   </div>
 </div> <!-- details container -->
 %end

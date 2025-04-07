@@ -54,6 +54,24 @@ def coa_modify(pName = 'CoA', value = '') -> dict :
     coaFound = db.coaConfig.find_one({"_id": ObjectId(value)})
     return dict(pName = 'coa/modify', coa = coaFound, value = 'modify')
 
+@post('/coa/modisave')
+@view('coa')
+def coa_modisave(pName="CoA", value='') -> dict :
+    print(dict(request.forms))
+    print(request.forms.frm_id)
+    print(request.forms.frm_event)
+    print(request.forms.frm_cause)
+    print(request.forms.frm_codLedger)
+    print(request.forms.frm_)
+    db = pym.MongoClient('mongodb://localhost:27017/')['TallerContable']
+    coaFound = db.coaConfig.find_one({"_id": ObjectId(request.forms.frm_id)})
+    coaNew = {"$set":dict(request.forms)}
+    if coaFound :
+        print('record found !!!!!!', 'Happy')
+        db.coaConfig.update_one( coaFound, coaNew )
+
+    return dict(pName = 'coa/save', coa = None, value='modisave')
+
 if __name__ == '__main__' :
     run(host='localhost', port=8080, debug=True, reloader=True)
     #run(host='localhost', port=8080)

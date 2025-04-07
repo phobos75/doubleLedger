@@ -61,6 +61,11 @@ function checkNumeric() {
 
     $( "#findSubmit" ).attr("disabled", isDisabled);
 
+} //checkNumeric
+
+function modisave_confirm() {
+    if (confirm("Are you Sure?")) 
+        document.coaModify.submit();
 }
 
 function btnDetailHover() {

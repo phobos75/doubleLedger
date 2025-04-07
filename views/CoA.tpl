@@ -12,9 +12,7 @@
 -->
 
 %if not value :
-  <!-- %include('frag_coa.tpl') -->
   %include('frag_coa_result.tpl')
-  <!-- %include('frag_cocoa.tpl') -->
 
 %elif "find" == value :
   %include('frag_coa_find.tpl')
@@ -33,7 +31,6 @@
 
 %else :
   %include('not_allowed.tpl')
-  <!-- <div style="border:1px solid red; margin-top:10px">{{ value }}</div> -->
 
 %end
 
